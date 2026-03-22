@@ -65,6 +65,7 @@ for event in dev.read_loop():
             # 👆 3 finger toggle
             if fingers >= 3:
                 enabled = not enabled
+                dev.grab() if enabled else dev.ungrab()
                 print("3 finger toggle:", enabled)
                 continue
 
@@ -81,6 +82,7 @@ for event in dev.read_loop():
             # top left toggle
             if key == "TOGGLE":
                 enabled = not enabled
+                dev.grab() if enabled else dev.ungrab()
                 print("Manual toggle:", enabled)
                 continue
 
